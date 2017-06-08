@@ -2,6 +2,7 @@ package classes;
 
 public class Flight 
 {
+	private String modelAvion;
 	private Plane plane;
 	private Airport arrival;
 	private Airport departure;
@@ -14,7 +15,7 @@ public class Flight
 		this.departure = a1;
 		this.arrival = a2;
 		this.company = company;
-		this.plane = new Plane(model);
+		this.modelAvion=model;
 	}
 
 	@Override
@@ -22,7 +23,7 @@ public class Flight
 	{
 		String str = "";
 		
-		str+= "vol numéro "+id+" au bord d'un " + plane.getModel() +" appartenant a la compagnie "+company+" qui va de : "+ departure.getShortName() +" à "+arrival.getShortName(); 
+		str+= "vol numéro "+id+" au bord d'un " + modelAvion +" appartenant a la compagnie "+company+" qui va de : "+ departure.getShortName() +" à "+arrival.getShortName(); 
 		return str;
 	}
 
@@ -41,6 +42,15 @@ public class Flight
 	{
 		return departure;
 	}
+
+	/**
+	 * @param plane the plane to set
+	 */
+	public void setPlane(Plane plane) 
+	{
+		this.plane = plane;
+	}
+	
 	
 
 	
